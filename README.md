@@ -18,10 +18,10 @@ The purpose of this project is to enhance data analysis skills by creating meani
 ## Datasets
 The Loan Dataset is used from Kaggle 
 https://www.kaggle.com/datasets/prakashraushan/loan-dataset
--**Features**: Loan amount, interest rate, loan grade, home ownership, loan intent, and loan default status
+- **Features**: Loan amount, interest rate, loan grade, home ownership, loan intent, and loan default status
 
 Iris Dataset
--**Features**: Sepal length, sepal width, petal length, petal width, and species classification
+- **Features**: Sepal length, sepal width, petal length, petal width, and species classification
 
 
 ## Libraries Used
@@ -33,25 +33,25 @@ Iris Dataset
 
 ## Visualizations
 Loan Data
--**Bar Plot (Loan Intent Distribution)**: Displays the distribution of loan purposes
--**Box Plot (Interest Rates by Loan Grade)**: Shows interest rate differences across loan grades
--**Stacked Bar Chart (Loan Default by Home Ownership)**: Analyzes default rates among homeowners and renters
+- **Bar Plot (Loan Intent Distribution)**: Displays the distribution of loan purposes
+- **Box Plot (Interest Rates by Loan Grade)**: Shows interest rate differences across loan grades
+- **Stacked Bar Chart (Loan Default by Home Ownership)**: Analyzes default rates among homeowners and renters
 
 Iris Data
--**Bar Plot (Average Sepal & Petal Width by Species)**: Compares sepal and petal width across species
--**Histogram (Petal Length Distribution by Species)**: Displays the spread of petal lengths among species
--**Scatter Plot (Sepal Length vs Sepal Width)**: Visualizes relationships between sepal dimensions with regression lines
+- **Bar Plot (Average Sepal & Petal Width by Species)**: Compares sepal and petal width across species
+- **Histogram (Petal Length Distribution by Species)**: Displays the spread of petal lengths among species
+- **Scatter Plot (Sepal Length vs Sepal Width)**: Visualizes relationships between sepal dimensions with regression lines
 
 ## Project Structure
--**Data Preparation**:
+- **Data Preparation**:
 - The loan dataset is loaded and cleaned to ensure numerical consistency
 - The Iris dataset is loaded directly using Scikit-learn
 
--**Visualization and Analysis**:
+- **Visualization and Analysis**:
 - Each dataset is explored using appropriate visualization techniques
 - Charts are analyzed to identify key trends and insights
 
--**Insights**
+- **Insights**
 - Loan intent varies significantly, with education being the most common reason for borrowing
 - Interest rates tend to be higher for lower loan grades, highlighting financial risk
 - Homeowners are more likely to default on loans compared to renters
