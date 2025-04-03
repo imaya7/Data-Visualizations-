@@ -44,18 +44,18 @@ Iris Data
 
 ## Project Structure
 - **Data Preparation**:
-- The loan dataset is loaded and cleaned to ensure numerical consistency
-- The Iris dataset is loaded directly using Scikit-learn
+  - The loan dataset is loaded and cleaned to ensure numerical consistency
+  - The Iris dataset is loaded directly using Scikit-learn
 
 - **Visualization and Analysis**:
-- Each dataset is explored using appropriate visualization techniques
-- Charts are analyzed to identify key trends and insights
+  - Each dataset is explored using appropriate visualization techniques
+  - Charts are analyzed to identify key trends and insights
 
 - **Insights**
-- Loan intent varies significantly, with education being the most common reason for borrowing
-- Interest rates tend to be higher for lower loan grades, highlighting financial risk
-- Homeowners are more likely to default on loans compared to renters
-- The Iris dataset shows distinct patterns among species, with significant differences in petal and sepal measurements
+  - Loan intent varies significantly, with education being the most common reason for borrowing
+  - Interest rates tend to be higher for lower loan grades, highlighting financial risk
+  - Homeowners are more likely to default on loans compared to renters
+  - The Iris dataset shows distinct patterns among species, with significant differences in petal and sepal measurements
 
 ## Limitations
 - The loan dataset may not be representative of all lending institutions
