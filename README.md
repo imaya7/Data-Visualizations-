@@ -10,10 +10,10 @@ This project explores data visualization techniques using Python's Seaborn and M
 The purpose of this project is to enhance data analysis skills by creating meaningful visualizations. By applying different types of charts, such as bar plots, box plots, histograms, and scatter plots, we aim to uncover patterns in loan interest rates, loan default rates, and relationships among Iris flower species characteristics.
 
 ## Files
--**loan_data_visualizations.py**: Python code for visualizing loan data
+- **loan_data_visualizations.py**: Python code for visualizing loan data
 
--**iris_visualizations.py**: Python code for visualizing Iris dataset
--**Copilotchat**: Copiolt help
+- **iris_visualizations.py**: Python code for visualizing Iris dataset
+- **Copilotchat**: Copiolt help
 
 ## Datasets
 The Loan Dataset is used from Kaggle 
