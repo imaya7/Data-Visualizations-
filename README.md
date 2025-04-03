@@ -1,5 +1,5 @@
 # Data-Visualizations-
-Learned how to use Seaborn and Matplotlib to create insightful data visualizations.
+Learned how to use Matplotlib to create insightful data visualizations.
 
 # Loan and Iris Data Visualizations Using Matplotlib
 
