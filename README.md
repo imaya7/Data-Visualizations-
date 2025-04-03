@@ -11,7 +11,7 @@ The purpose of this project is to enhance data analysis skills by creating meani
 
 ## Files
 - **loan_data_visualizations.py**: Python code for visualizing loan data
-- **loanDataset-LoansDataset**: Excel dataset file 
+- **loanDataset-LoansDataset.csv**: Excel dataset file 
 - **iris_visualizations.py**: Python code for visualizing Iris dataset
 - **Copilotchat**: Copiolt help
 
