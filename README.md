@@ -4,7 +4,7 @@ Learned how to use Matplotlib to create insightful data visualizations.
 # Loan and Iris Data Visualizations Using Matplotlib
 
 ## Overview
-This project explores data visualization techniques using Python's Seaborn and Matplotlib libraries. Two datasets are analyzed: a loan dataset containing financial information related to loans and an Iris dataset containing flower measurements. Various visualizations are created to identify trends and insights in both datasets.
+This project explores data visualization techniques using Matplotlib libraries. Two datasets are analyzed: a loan dataset containing financial information related to loans and an Iris dataset containing flower measurements. Various visualizations are created to identify trends and insights in both datasets.
 
 ## Purpose
 The purpose of this project is to enhance data analysis skills by creating meaningful visualizations. By applying different types of charts, such as bar plots, box plots, histograms, and scatter plots, we aim to uncover patterns in loan interest rates, loan default rates, and relationships among Iris flower species characteristics.
@@ -26,7 +26,7 @@ Iris Dataset
 
 ## Libraries Used
 - Pandas as pd
-- Seaborn as sns
+- numpy as np
 - Matplotlib.pyplot as plt
 - Sklearn. datasets 
 - Os 
