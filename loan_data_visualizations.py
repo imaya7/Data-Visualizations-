@@ -1,10 +1,10 @@
 import pandas as pd
-import seaborn as sns
 import matplotlib.pyplot as plt
 import os
 
 # Load data
 def load_data(file_path):
+    #looks for file path 
     if not os.path.exists(file_path):
         print(f"File not found: {file_path}")
         return None
@@ -12,6 +12,7 @@ def load_data(file_path):
 
 # Clean data
 def clean_data(data):
+    # Replace currency symbols and convert to float
     data['loan_amnt'] = data['loan_amnt'].replace('[£,]', '', regex=True).astype(float)
     data['loan_int_rate'] = data['loan_int_rate'].astype(float)
     return data
@@ -19,13 +20,12 @@ def clean_data(data):
 # Plot loan intents
 def plot_bar(data):
     plt.figure(figsize=(8, 6))
-    sns.countplot(
-        data=data,
-        x='loan_intent',
-        palette=sns.color_palette('viridis', n_colors=len(data['loan_intent'].unique())),
-        order=data['loan_intent'].value_counts().index
-    )
+    #counts the number of each loan intent 
+    loan_intent_counts = data['loan_intent'].value_counts()
+    colors = plt.cm.Paired(range(len(loan_intent_counts)))  # Use a paired colormap
+    plt.bar(loan_intent_counts.index, loan_intent_counts.values, color=colors)
     plt.title('Distribution of Loan Intents', fontsize=16, fontweight='bold')
+    #adds labels to the x and y axis
     plt.xlabel('Loan Intent', fontsize=14)
     plt.ylabel('Count', fontsize=14)
     plt.xticks(rotation=45, fontsize=12)
@@ -35,8 +35,21 @@ def plot_bar(data):
 
 # Plot interest rates by grade
 def plot_box(data):
+    # Drop rows with missing loan_int_rate or loan_grade
+    filtered_data = data.dropna(subset=['loan_int_rate', 'loan_grade'])
+    
     plt.figure(figsize=(10, 6))
-    sns.boxplot(data=data, x='loan_grade', y='loan_int_rate', palette='pastel', order=sorted(data['loan_grade'].unique()))
+    #sorted list of interest rates by loan grade
+    loan_grades = sorted(filtered_data['loan_grade'].unique())
+    # list of interest rates by loan grade
+    box_data = [filtered_data[filtered_data['loan_grade'] == grade]['loan_int_rate'] for grade in loan_grades]
+    colors = plt.cm.Set3(range(len(loan_grades)))  # Use a Set3 colormap
+    box = plt.boxplot(box_data, labels=loan_grades, patch_artist=True)
+    
+    # Apply colors to each box
+    for patch, color in zip(box['boxes'], colors):
+        patch.set_facecolor(color)
+    # adds labels to the x and y axis
     plt.title('Interest Rates by Loan Grade', fontsize=16, fontweight='bold')
     plt.xlabel('Loan Grade', fontsize=14)
     plt.ylabel('Interest Rate (%)', fontsize=14)
@@ -46,8 +59,12 @@ def plot_box(data):
 
 # Plot loan status by home ownership
 def plot_stacked(data):
+    # Group by home ownership and current loan status
     home_status = data.groupby(['home_ownership', 'Current_loan_status']).size().unstack(fill_value=0)
-    ax = home_status.plot(kind='bar', stacked=True, figsize=(10, 6), color=['#6baed6', '#74c476'])
+    colors = ['#4daf4a', '#377eb8']  # Use a custom color palette
+    #blue and green colors
+    ax = home_status.plot(kind='bar', stacked=True, figsize=(10, 6), color=colors)
+    #adds labels to the x and y axis
     plt.title('Loan Default Status by Home Ownership', fontsize=16, fontweight='bold')
     plt.xlabel('Home Ownership', fontsize=14)
     plt.ylabel('Count', fontsize=14)
@@ -56,21 +73,26 @@ def plot_stacked(data):
     plt.xticks(rotation=0, fontsize=12)
     plt.tight_layout()
 
-    # Add annotations
+    # Add annotations to the stacked bar plot
     for container in ax.containers:
         ax.bar_label(container, fmt='%d', label_type='center', fontsize=10, color='white')
     plt.show()
 
 # Main
 if __name__ == "__main__":
+    # Specify the file path
     file_path = r"C:\Users\trash\Downloads\LoanDataset - LoansDatasest.csv"
+    # Load the data
     data = load_data(file_path)
     
+    # Check if data is loaded successfully
     if data is not None:
         data = clean_data(data)
         plot_bar(data)
         plot_box(data)
         plot_stacked(data)
+
+
 
 
 # The three visualizations provide a good insight into the Loan Dataset. The bar plot shows the distribution of the loan intents
